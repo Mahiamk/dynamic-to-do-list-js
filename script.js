@@ -6,12 +6,16 @@ document.addEventListener("DOMContentLoaded", function(){
   function addTask(){
     const taskText = taskInput.value.trim();
     if (taskText === ""){
+      taskInput.classList.add("error");
       alert("Please enter a task.");
       return;
+    }else{
+      taskInput.classList.remove("error");
     }
 
     const listItem = document.createElement("li");
     listItem.textContent=taskText;
+    listItem.classList.add("tasl-item");
 
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
